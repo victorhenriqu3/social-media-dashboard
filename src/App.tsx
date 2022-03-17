@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import GlobalStyle from "./Styles/global";
+import { ThemeProvider } from "styled-components";
+import TogglerButton from "./Components/TogglerButton";
+import ThemeContext from "./contexts/ThemeContext";
+import useThemeMode from "./hooks/useThemeMode";
+import { darkTheme, lightTheme } from "./Styles/theme";
 
 function App() {
+  const { theme, themeToggler } = useThemeMode();
+  const themeMode = theme === "dark" ? darkTheme : lightTheme;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext>
+      <ThemeProvider theme={themeMode}>
+        <GlobalStyle />
+        <header>
+          <TogglerButton ThemeToggler={themeToggler} />
+        </header>
+      </ThemeProvider>
+    </ThemeContext>
   );
 }
 
