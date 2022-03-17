@@ -5,7 +5,6 @@ const ContainerToggler = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 5vw;
   }
   .ToggleTitle {
     margin-right: 1vw;
