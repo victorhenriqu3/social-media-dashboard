@@ -1,7 +1,7 @@
 import React from "react";
 import ContainerToggler from "./styles";
 
-interface ThemeTogglerProps {
+export interface ThemeTogglerProps {
   ThemeToggler: () => void;
 }
 

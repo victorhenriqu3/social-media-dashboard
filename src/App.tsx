@@ -1,9 +1,9 @@
 import React from "react";
-import GlobalStyle from "./Styles/global";
 import { ThemeProvider } from "styled-components";
-import TogglerButton from "./Components/TogglerButton";
+import HeaderDashboard from "./Containers/HeaderDashboard";
 import ThemeContext from "./contexts/ThemeContext";
 import useThemeMode from "./hooks/useThemeMode";
+import GlobalStyle from "./Styles/global";
 import { darkTheme, lightTheme } from "./Styles/theme";
 
 function App() {
@@ -13,9 +13,7 @@ function App() {
     <ThemeContext>
       <ThemeProvider theme={themeMode}>
         <GlobalStyle />
-        <header>
-          <TogglerButton ThemeToggler={themeToggler} />
-        </header>
+        <HeaderDashboard ThemeToggler={themeToggler} />
       </ThemeProvider>
     </ThemeContext>
   );
