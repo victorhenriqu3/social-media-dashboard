@@ -20,7 +20,7 @@ const globalStyle = createGlobalStyle` @import url('https://fonts.googleapis.com
   --Facebook: hsl(208, 92%, 53%)
   --Twitter: hsl(203, 89%, 53%)
   --Instagram: linear-gradient(to right,hsl(37, 97%, 70%),hsl(329, 70%, 58%))
-  --YouTube: hsl(348, 97%, 39%)
+  --YouTube: hsl(348, 97%, 39%);
 
   //Dark Mode
   --Dark-BG: hsl(230, 17%, 14%);
@@ -34,8 +34,8 @@ const globalStyle = createGlobalStyle` @import url('https://fonts.googleapis.com
   --Light-BG: hsl(0, 0%, 100%);
   --Light-TopBGPatten: hsl(225, 100%, 98%);
   --Light-CardBG: hsl(227, 47%, 96%);
-  --Light-Text: hsl(228, 12%, 44%);
-  --Light-SecondaryText: hsl(230, 17%, 14%);
+  --Light-SecondaryText: hsl(228, 12%, 44%);
+  --Light-Text: hsl(230, 17%, 14%);
   --Light-Toggle: hsl(230, 22%, 74%);
 }
 
@@ -54,7 +54,6 @@ body {
   background-color: ${({ theme }: GlobalThemeProps) => theme.BG};
   display: flex;
   justify-content: center;
-  align-items: center;
   font-family: 'Inter', sans-serif;
 }
 

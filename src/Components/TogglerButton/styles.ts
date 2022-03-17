@@ -5,10 +5,12 @@ const ContainerToggler = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 5vw ;
+    padding: 0 5vw;
   }
   .ToggleTitle {
     margin-right: 1vw;
+    color: ${({ theme }) => theme.SecondaryText};
+    font-weight: 700;
   }
   input[type="checkbox"] {
     height: 0;
@@ -21,11 +23,7 @@ const ContainerToggler = styled.div`
     text-indent: -9999px;
     width: 100px;
     height: 40px;
-    background-image: linear-gradient(
-      to right,
-      hsl(210, 78%, 56%),
-      hsl(146, 68%, 55%)
-    );
+    background: ${({ theme }) => theme.Toggle};
     display: block;
     border-radius: 100px;
     position: relative;
@@ -39,27 +37,23 @@ const ContainerToggler = styled.div`
     left: 5px;
     width: 30px;
     height: 30px;
-    background: hsl(230, 17%, 14%);
+    background: ${({ theme }) => theme.BG};
     border-radius: 90px;
     transition: 0.3s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
 
   input:checked + label {
-    background: hsl(230, 22%, 74%);
+    background: ${({ theme }) => theme.Toggle};
   }
 
   input:hover + label:hover {
-    background-image: linear-gradient(
-      to right,
-      hsl(210, 78%, 56%),
-      hsl(146, 68%, 55%)
-    );
+    background: var(--Dark-Toggle);
   }
 
   input:checked + label:after {
     box-shadow: 0 -2px -5px rgba(0, 0, 0, 0.3);
-    background: hsl(0, 0%, 100%);
+    background: ${({ theme }) => theme.BG};
     left: calc(100% - 5px);
     transform: translateX(-100%);
   }

@@ -10,12 +10,13 @@ function TogglerButton({ ThemeToggler }: ThemeTogglerProps) {
     <>
       <ContainerToggler>
         <div className='Wrapper'>
-          <p className='ToggleTitle'>Dark Theme</p>
+          <p className='ToggleTitle'>Dark Mode</p>
           <input
             id='checkbox'
             type='checkbox'
             onClick={ThemeToggler}
             onChange={() => false}
+            checked={window.localStorage.getItem("theme") === "light"}
           />
           <label htmlFor='checkbox' className='switch'></label>
         </div>

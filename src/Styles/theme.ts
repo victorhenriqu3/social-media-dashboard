@@ -5,6 +5,7 @@ export interface ThemeProps {
   Text: string;
   SecondaryText: string;
   Toggle: string;
+  Slider: string;
 }
 
 export const darkTheme: ThemeProps = {
@@ -14,6 +15,7 @@ export const darkTheme: ThemeProps = {
   Text: "var(--Dark-Text)",
   SecondaryText: "var(--Dark-SecondaryText)",
   Toggle: "var(--Dark-Toggle)",
+  Slider: "var(--Dark-BG)",
 };
 export const lightTheme: ThemeProps = {
   BG: "var(--Light-BG)",
@@ -22,4 +24,5 @@ export const lightTheme: ThemeProps = {
   Text: "var(--Light-Text)",
   SecondaryText: "var(--Light-SecondaryText)",
   Toggle: "var(--Light-Toggle)",
+  Slider: "var(--Light-BG)",
 };
