@@ -17,8 +17,7 @@ const ContainerCardStats = styled.div.attrs((props: SocialMedia) => ({
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  padding: 1vh 2vw;
+  padding:1.5vh;
 
   h2 {
     color: ${({ theme }) => theme.Text};
@@ -33,14 +32,14 @@ const ContainerCardStats = styled.div.attrs((props: SocialMedia) => ({
     justify-content: stretch;
   }
   .row span {
-    margin: 2vh;
+    margin: 1.5vh;
   }
 
   .Indicator {
     color: ${(props) => (props.Up ? "var(--LimeGreen)" : "var(--BrightRed)")};
   }
   .Column {
-    height: 20vh;
+    height: 10vh;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -65,7 +64,7 @@ const ContainerCardStats = styled.div.attrs((props: SocialMedia) => ({
   }
 
   .Icon {
-    width: 1.5vw;
+    width: 3vh;
   }
 `;
 export default ContainerCardStats;
