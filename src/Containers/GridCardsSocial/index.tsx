@@ -19,23 +19,23 @@ export default function GridCardsSocial() {
             <CardSocialTop
               SocialMedia='Twitter'
               User='nathanf'
-              Followers={1982}
-              NewFollowers={12}
+              Followers={1044}
+              NewFollowers={99}
               UpFollowers={true}
             />
             <CardSocialTop
               SocialMedia='Instagram'
-              User='nathanf'
-              Followers={1982}
-              NewFollowers={12}
+              User='realnathanf'
+              Followers={11000}
+              NewFollowers={1099}
               UpFollowers={true}
             />
             <CardSocialTop
               SocialMedia='YouTube'
-              User='nathanf'
-              Followers={1982}
-              NewFollowers={12}
-              UpFollowers={true}
+              User='Nathan F.'
+              Followers={8239}
+              NewFollowers={144}
+              UpFollowers={false}
             />
           </div>
         </div>

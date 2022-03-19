@@ -20,11 +20,17 @@ function CardSocialTop(card: CardProps) {
       <ContainerCard Up={card.UpFollowers} Social={card.SocialMedia}>
         <section className='row bio'>
           <img src={Icon} className='Icon' alt={`${card.SocialMedia} Icon`} />
-          <span>@{card.User}</span>
+          <span>
+            {card.SocialMedia === "YouTube" ? card.User : `@${card.User}`}
+          </span>
         </section>
         <section className='Followers'>
-          <h2>{card.Followers}</h2>
-          <p>{card.SocialMedia === "Youtube" ? "SUBSCRIBERS" : "FOLLOWERS"}</p>
+          <h2>
+            {card.Followers >= 10000
+              ? `${(card.Followers / 1000).toFixed(0)}k`
+              : card.Followers}
+          </h2>
+          <p>{card.SocialMedia === "YouTube" ? "SUBSCRIBERS" : "FOLLOWERS"}</p>
         </section>
         <section className='row Indicator'>
           <img
