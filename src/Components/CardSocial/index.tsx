@@ -1,8 +1,9 @@
 import React from "react";
-import FBIcon from "../../images/icon-facebook.svg";
+
 import UpIcon from "../../images/icon-up.svg";
 import DownIcon from "../../images/icon-down.svg";
 import ContainerCard from "./styles";
+import IconSelect from "../../Utils/IconSelect";
 
 export interface CardProps {
   SocialMedia: string;
@@ -13,11 +14,12 @@ export interface CardProps {
 }
 
 function CardSocialTop(card: CardProps) {
+  const Icon = IconSelect(card.SocialMedia);
   return (
     <>
       <ContainerCard Up={card.UpFollowers} Social={card.SocialMedia}>
         <section className='row bio'>
-          <img src={FBIcon} className='Icon' alt={`${card.SocialMedia} Icon`} />
+          <img src={Icon} className='Icon' alt={`${card.SocialMedia} Icon`} />
           <span>@{card.User}</span>
         </section>
         <section className='Followers'>
