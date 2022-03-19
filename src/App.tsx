@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import CardStatsBottom from "./Components/CardStats";
 import GridCardsSocial from "./Containers/GridCardsSocial";
 import HeaderDashboard from "./Containers/HeaderDashboard";
 import ThemeContext from "./contexts/ThemeContext";
@@ -16,6 +17,13 @@ function App() {
         <GlobalStyle />
         <HeaderDashboard ThemeToggler={themeToggler} />
         <GridCardsSocial />
+        <CardStatsBottom
+          Title='Page Views'
+          SocialMedia='Facebook'
+          Stats={87}
+          NewStats={3}
+          UpStats={true}
+        />
       </ThemeProvider>
     </ThemeContext>
   );
