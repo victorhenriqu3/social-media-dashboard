@@ -8,7 +8,8 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
   Social: props.Social,
 }))<SocialMedia>`
   position: relative;
-  width: 400px;
+  width: 20vw;
+  height: 20vw;
   margin: auto;
   border-top: double 10px transparent;
   border-radius: 15px;
@@ -16,9 +17,10 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
       ${({ theme }) => theme.CardBG},
       ${({ theme }) => theme.CardBG}
     ),
-    ${(props)=>{
+    ${(props) => {
       const Social = props.Social;
-      return `var(--${Social})`}};
+      return `var(--${Social})`;
+    }};
   background-origin: border-box;
   background-clip: content-box, border-box;
   bottom: 10vh;
@@ -40,7 +42,7 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 3vh;
+    padding: 1vh;
   }
 
   .row span {
@@ -52,14 +54,14 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
   }
 
   .Followers {
-    padding: 5vh 0;
+    padding: 1vw 0;
     text-align: center;
     font-weight: 400;
-    letter-spacing: 0.5em;
+    letter-spacing: 0.5rem;
   }
 
   .bio {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 `;
 

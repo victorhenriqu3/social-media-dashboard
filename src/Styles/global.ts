@@ -18,9 +18,9 @@ const globalStyle = createGlobalStyle`
 
   //Social Media Colors
   --Facebook: linear-gradient(to right,hsl(208, 92%, 53%),hsl(208, 92%, 53%));
-  --Twitter: hsl(203, 89%, 53%);
+  --Twitter: linear-gradient(to right,hsl(203, 89%, 53%),hsl(203, 89%, 53%));
   --Instagram: linear-gradient(to right,hsl(37, 97%, 70%),hsl(329, 70%, 58%));
-  --YouTube: hsl(348, 97%, 39%);
+  --YouTube: linear-gradient(to right,hsl(348, 97%, 39%),hsl(348, 97%, 39%));
 
   //Dark Mode
   --Dark-BG: hsl(230, 17%, 14%);
