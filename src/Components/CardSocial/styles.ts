@@ -8,9 +8,6 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
   Social: props.Social,
 }))<SocialMedia>`
   position: relative;
-  width: 20vw;
-  height: 20vw;
-  margin: auto;
   border-top: double 10px transparent;
   border-radius: 15px;
   background-image: linear-gradient(
@@ -38,15 +35,14 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
 
   .row {
     display: flex;
-    width: 40%;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 1vh;
+    padding: 1vh 3vh;
   }
 
   .row span {
-    margin-left: 2vh;
+    margin: 2vh;
   }
 
   .Indicator {
@@ -54,7 +50,7 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
   }
 
   .Followers {
-    padding: 1vw 0;
+    padding: 1vw 3vw;
     text-align: center;
     font-weight: 400;
     letter-spacing: 0.5rem;
