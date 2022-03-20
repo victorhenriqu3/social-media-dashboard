@@ -5,7 +5,7 @@ import { ThemeProps } from "./theme";
 type GlobalThemeProps = {
   theme: ThemeProps;
 };
-const globalStyle = createGlobalStyle` @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+const globalStyle = createGlobalStyle` 
 
 :root {
   //Screens
@@ -17,10 +17,10 @@ const globalStyle = createGlobalStyle` @import url('https://fonts.googleapis.com
   --BrightRed: hsl(356, 69%, 56%);
 
   //Social Media Colors
-  --Facebook: hsl(208, 92%, 53%);
-  --Twitter: hsl(203, 89%, 53%);
+  --Facebook: linear-gradient(to right,hsl(208, 92%, 53%),hsl(208, 92%, 53%));
+  --Twitter: linear-gradient(to right,hsl(203, 89%, 53%),hsl(203, 89%, 53%));
   --Instagram: linear-gradient(to right,hsl(37, 97%, 70%),hsl(329, 70%, 58%));
-  --YouTube: hsl(348, 97%, 39%);
+  --YouTube: linear-gradient(to right,hsl(348, 97%, 39%),hsl(348, 97%, 39%));
 
   //Dark Mode
   --Dark-BG: hsl(230, 17%, 14%);
@@ -49,11 +49,12 @@ const globalStyle = createGlobalStyle` @import url('https://fonts.googleapis.com
 body {
   -webkit-font-smoothing: antialiased;
   height: 100vh;
-  width: 50vw;
+  max-width: 100%;
   margin: 0 auto;
   background-color: ${({ theme }: GlobalThemeProps) => theme.BG};
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
   font-family: 'Inter', sans-serif;
 }
 

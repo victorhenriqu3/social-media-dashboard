@@ -1,5 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import GridCardsSocial from "./Containers/GridCardsSocial";
+import GridCardsStats from "./Containers/GridCardsStats";
 import HeaderDashboard from "./Containers/HeaderDashboard";
 import ThemeContext from "./contexts/ThemeContext";
 import useThemeMode from "./hooks/useThemeMode";
@@ -14,6 +16,8 @@ function App() {
       <ThemeProvider theme={themeMode}>
         <GlobalStyle />
         <HeaderDashboard ThemeToggler={themeToggler} />
+        <GridCardsSocial />
+        <GridCardsStats />
       </ThemeProvider>
     </ThemeContext>
   );

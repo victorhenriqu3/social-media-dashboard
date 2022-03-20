@@ -20,6 +20,20 @@ const ContainerHeader = styled.header`
   hr {
     display: none;
   }
+
+  @media screen and (max-width: 375px) {
+    flex-direction: column;
+    justify-content: center;
+    padding: 5vh 0 10vh;
+    
+
+    hr {
+      margin: 3vh 1vh;
+      display: block;
+      width: 90vw;
+      border-color: ${({ theme }) => theme.SecondaryText};
+    }
+  }
 `;
 
 export default ContainerHeader;
