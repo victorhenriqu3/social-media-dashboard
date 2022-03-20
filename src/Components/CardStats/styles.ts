@@ -17,7 +17,7 @@ const ContainerCardStats = styled.div.attrs((props: SocialMedia) => ({
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding:1.5vh;
+  padding: 1.5vh;
 
   h2 {
     color: ${({ theme }) => theme.Text};

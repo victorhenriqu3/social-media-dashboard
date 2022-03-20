@@ -1,44 +1,51 @@
-import React from "react";
-import CardSocialTop from "../../Components/CardSocial";
+import React, { useState } from "react";
+import RLDD from "react-list-drag-and-drop/lib/RLDD";
+import CardSocialTop, { CardProps } from "../../Components/CardSocial";
 import ContainerGrid from "./styles";
+import SocialMedia from "../../Utils/Data/SocialMedia.json";
 
 export default function GridCardsSocial() {
+  type GridSocial = CardProps & { id: number };
+  const [cards, setCards] = useState<GridSocial[]>(() => {
+    try {
+      const item = window.localStorage.getItem("CardsSocial");
+      return item ? JSON.parse(item) : SocialMedia.SocialMedia;
+    } catch (error) {
+      console.log(error);
+      return SocialMedia.SocialMedia;
+    }
+  });
+
+  const itemRenderer = (item: GridSocial, index: number): JSX.Element => {
+    return (
+      <li className='item'>
+        <CardSocialTop
+          SocialMedia={item.SocialMedia}
+          User={item.User}
+          Followers={item.Followers}
+          NewFollowers={item.NewFollowers}
+          UpFollowers={item.UpFollowers}
+        />
+      </li>
+    );
+  };
+
+  const handleChange = (reorderedItems: Array<GridSocial>) => {
+    setCards(reorderedItems);
+  };
   return (
     <>
       <ContainerGrid>
-        +
-        <div className='container'>
-          <div className='cards'>
-            <CardSocialTop
-              SocialMedia='Facebook'
-              User='nathanf'
-              Followers={1982}
-              NewFollowers={12}
-              UpFollowers={true}
-            />
-            <CardSocialTop
-              SocialMedia='Twitter'
-              User='nathanf'
-              Followers={1044}
-              NewFollowers={99}
-              UpFollowers={true}
-            />
-            <CardSocialTop
-              SocialMedia='Instagram'
-              User='realnathanf'
-              Followers={11000}
-              NewFollowers={1099}
-              UpFollowers={true}
-            />
-            <CardSocialTop
-              SocialMedia='YouTube'
-              User='Nathan F.'
-              Followers={8239}
-              NewFollowers={144}
-              UpFollowers={false}
-            />
-          </div>
-        </div>
+        <RLDD
+          inlineStyle={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(275px, 1.5fr))",
+          }}
+          cssClasses='cards'
+          items={cards}
+          itemRenderer={itemRenderer}
+          onChange={handleChange}
+        />
       </ContainerGrid>
     </>
   );

@@ -5,6 +5,7 @@ const ContainerGridStats = styled.div`
   .Overview {
     color: ${({ theme }) => theme.Text};
     margin: 3vh 5vw;
+    bottom: 10vh;
   }
 `;
 

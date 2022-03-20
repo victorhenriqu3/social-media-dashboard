@@ -26,6 +26,7 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 110%;
 
   h2 {
     color: ${({ theme }) => theme.Text};

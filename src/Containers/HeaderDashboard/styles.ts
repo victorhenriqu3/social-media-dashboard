@@ -5,7 +5,7 @@ const ContainerHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  padding: 5vh 10vh 30vh;
+  padding: 5vh 10vh 15vh;
   border-radius: 0 0 20px 20px;
   background: ${({ theme }) => theme.TopBGPattern};
   font-weight: 700;
