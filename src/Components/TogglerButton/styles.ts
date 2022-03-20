@@ -60,6 +60,15 @@ const ContainerToggler = styled.div`
   label:active:after {
     width: 90px;
   }
+
+  @media screen and (max-width: 375px) {
+    transform: scale(0.7);
+
+    .Wrapper {
+      width: 150vw;
+      justify-content: space-around;
+    }
+  }
 `;
 
 export default ContainerToggler;

@@ -49,11 +49,12 @@ const globalStyle = createGlobalStyle`
 body {
   -webkit-font-smoothing: antialiased;
   height: 100vh;
-  width: 50vw;
+  max-width: 100%;
   margin: 0 auto;
   background-color: ${({ theme }: GlobalThemeProps) => theme.BG};
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
   font-family: 'Inter', sans-serif;
 }
 
