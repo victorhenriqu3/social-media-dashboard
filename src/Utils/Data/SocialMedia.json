@@ -1,0 +1,32 @@
+{
+  "SocialMedia": [
+    {
+      "SocialMedia": "Facebook",
+      "User": "nathanf",
+      "Followers": 1987,
+      "NewFollowers": 12,
+      "UpFollowers": true
+    },
+    {
+      "SocialMedia": "Twitter",
+      "User": "nathanf",
+      "Followers": 1044,
+      "NewFollowers": 99,
+      "UpFollowers": true
+    },
+    {
+      "SocialMedia": "Instagram",
+      "User": "realnathanf",
+      "Followers": 11000,
+      "NewFollowers": 1099,
+      "UpFollowers": true
+    },
+    {
+      "SocialMedia": "YouTube",
+      "User": "Nathan F.",
+      "Followers": 8239,
+      "NewFollowers": 144,
+      "UpFollowers": false
+    }
+  ]
+}
