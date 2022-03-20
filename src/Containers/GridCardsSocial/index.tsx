@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RLDD from "react-list-drag-and-drop/lib/RLDD";
 import CardSocialTop, { CardProps } from "../../Components/CardSocial";
 import ContainerGrid from "./styles";
@@ -15,6 +15,10 @@ export default function GridCardsSocial() {
       return SocialMedia.SocialMedia;
     }
   });
+
+  useEffect(() => {
+    window.localStorage.setItem("CardsSocial", JSON.stringify(cards));
+  }, [cards]);
 
   const itemRenderer = (item: GridSocial, index: number): JSX.Element => {
     return (
