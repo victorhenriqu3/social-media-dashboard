@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import RLDD from "react-list-drag-and-drop/lib/RLDD";
+import BackFlipCard from "../../Components/BackFlipCard";
 import CardSocialTop, { CardProps } from "../../Components/CardSocial";
-import ContainerGrid from "./styles";
 import SocialMedia from "../../Utils/Data/SocialMedia.json";
+import StatsSelect from "../../Utils/StatsSelect";
+import ContainerGrid from "./styles";
 
 export default function GridCardsSocial() {
   type GridSocial = CardProps & { id: number };
@@ -18,18 +20,31 @@ export default function GridCardsSocial() {
 
   useEffect(() => {
     window.localStorage.setItem("CardsSocial", JSON.stringify(cards));
+    console.log(StatsSelect("Facebook"));
   }, [cards]);
 
   const itemRenderer = (item: GridSocial, index: number): JSX.Element => {
+    let stats = StatsSelect(item.SocialMedia);
+
     return (
       <li className='item'>
-        <CardSocialTop
-          SocialMedia={item.SocialMedia}
-          User={item.User}
-          Followers={item.Followers}
-          NewFollowers={item.NewFollowers}
-          UpFollowers={item.UpFollowers}
-        />
+        <input type='checkbox' id='flipActive' />
+        <div className='flip-container'>
+          <div className='flipper'>
+            <div className='front'>
+              <CardSocialTop
+                SocialMedia={item.SocialMedia}
+                User={item.User}
+                Followers={item.Followers}
+                NewFollowers={item.NewFollowers}
+                UpFollowers={item.UpFollowers}
+              />
+            </div>
+            <div className='back'>
+              <BackFlipCard StatsList={stats} />
+            </div>
+          </div>
+        </div>
       </li>
     );
   };

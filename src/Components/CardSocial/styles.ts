@@ -53,7 +53,6 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
 
   .Indicator {
     color: ${(props) => (props.Up ? "var(--LimeGreen)" : "var(--BrightRed)")};
-    margin-bottom: 2vh;
   }
 
   .Followers {
@@ -65,6 +64,12 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
 
   .bio {
     font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 375px) {
+    .item {
+      margin: 10vh;
+    }
   }
 `;
 

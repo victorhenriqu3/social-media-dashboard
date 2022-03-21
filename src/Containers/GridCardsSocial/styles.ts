@@ -1,6 +1,40 @@
 import styled from "styled-components";
 
 const ContainerGrid = styled.div`
+  .flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  .flip-container:hover .flipper {
+    transform: rotateY(180deg);
+    /* se quiser uma animação na vertical,
+	troque por rotateX(180deg)
+	*/
+  }
+
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+
+  #flipActive:checked ~ .flip-container .flipper {
+    transform: rotateY(180deg);
+  }
+
+  #flipActive {
+    display: none;
+  }
+
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));

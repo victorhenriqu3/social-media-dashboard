@@ -4,9 +4,8 @@ import ContainerGridStats from "./styles";
 import RLDD from "react-list-drag-and-drop/lib/RLDD";
 import StatsSocial from "../../Utils/Data/SocialStats.json";
 
+export type GridsStats = StatsProps & { id: number };
 export default function GridCardsStats() {
-  type GridsStats = StatsProps & { id: number };
-
   const [stats, setStats] = useState<GridsStats[]>(() => {
     try {
       const item = window.localStorage.getItem("CardStats");
