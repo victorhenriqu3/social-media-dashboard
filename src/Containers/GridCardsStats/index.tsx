@@ -9,7 +9,7 @@ export default function GridCardsStats() {
     <>
       <ContainerGridStats>
         <h2 className='Overview'>Overview - Today</h2>
-        <ContainerGrid>
+        
           <div className='container'>
             <div className='cards'>
               <CardStatsBottom
@@ -70,7 +70,7 @@ export default function GridCardsStats() {
               />
             </div>
           </div>
-        </ContainerGrid>
+        
       </ContainerGridStats>
     </>
   );
