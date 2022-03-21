@@ -60,10 +60,12 @@ const ContainerCardStats = styled.div.attrs((props: SocialMedia) => ({
     align-items: flex-start;
     align-content: left;
     flex-wrap: wrap;
+    justify-content: end;
   }
 
   .Stats {
     display: flex;
+    align-items: flex-end;
     flex-direction: column;
     justify-content: space-around;
   }

@@ -53,7 +53,7 @@ const ContainerCard = styled.div.attrs((props: SocialMedia) => ({
 
   .Indicator {
     color: ${(props) => (props.Up ? "var(--LimeGreen)" : "var(--BrightRed)")};
-    margin-bottom: 2vh;
+    
   }
 
   .Followers {
