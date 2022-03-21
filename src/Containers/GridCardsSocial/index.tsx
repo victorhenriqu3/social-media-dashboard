@@ -3,6 +3,7 @@ import RLDD from "react-list-drag-and-drop/lib/RLDD";
 import CardSocialTop, { CardProps } from "../../Components/CardSocial";
 import ContainerGrid from "./styles";
 import SocialMedia from "../../Utils/Data/SocialMedia.json";
+import StatsSelect from "../../Utils/StatsSelect";
 
 export default function GridCardsSocial() {
   type GridSocial = CardProps & { id: number };
