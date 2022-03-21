@@ -17,7 +17,12 @@ const ContainerCardStats = styled.div.attrs((props: SocialMedia) => ({
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding:1.5vh;
+  padding: 2vh;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+  :hover {
+    opacity: 0.7;
+  }
 
   h2 {
     color: ${({ theme }) => theme.Text};
