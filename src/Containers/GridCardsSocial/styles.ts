@@ -8,6 +8,7 @@ const ContainerGrid = styled.div`
     margin: 0 5vw;
     justify-content: center;
     align-content: center;
+    list-style: none;
   }
 
   .item {
