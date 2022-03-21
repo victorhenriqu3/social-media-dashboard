@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CardStatsBottom, { StatsProps } from "../../Components/CardStats";
 import ContainerGridStats from "./styles";
 import RLDD from "react-list-drag-and-drop/lib/RLDD";
@@ -16,6 +16,9 @@ export default function GridCardsStats() {
       return StatsSocial.Stats;
     }
   });
+  useEffect(() => {
+    window.localStorage.setItem("CardStats", JSON.stringify(stats));
+  }, [stats]);
 
   const handleChange = (reorderedItems: Array<GridsStats>) => {
     setStats(reorderedItems);
