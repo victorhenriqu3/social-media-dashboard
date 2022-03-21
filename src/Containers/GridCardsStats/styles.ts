@@ -3,6 +3,7 @@ import styled from "styled-components";
 const ContainerGridStats = styled.div`
   padding-bottom: 10vh;
   transform: translate(0, -10vh);
+  list-style: none;
   .Overview {
     color: ${({ theme }) => theme.Text};
     margin: 3vh 5vw;

@@ -44,6 +44,7 @@ export default function GridCardsSocial() {
           inlineStyle={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(275px, 1.5fr))",
+            listItemStyle: "none",
           }}
           cssClasses='cards'
           items={cards}

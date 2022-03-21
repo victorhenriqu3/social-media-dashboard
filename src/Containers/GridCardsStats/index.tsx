@@ -1,76 +1,53 @@
-import React from "react";
-import CardStatsBottom from "../../Components/CardStats";
-
-import ContainerGrid from "../GridCardsSocial/styles";
+import React, { useState } from "react";
+import CardStatsBottom, { StatsProps } from "../../Components/CardStats";
 import ContainerGridStats from "./styles";
+import RLDD from "react-list-drag-and-drop/lib/RLDD";
+import StatsSocial from "../../Utils/Data/SocialStats.json";
 
 export default function GridCardsStats() {
+  type GridsStats = StatsProps & { id: number };
+
+  const [stats, setStats] = useState<GridsStats[]>(() => {
+    try {
+      const item = window.localStorage.getItem("CardStats");
+      return item ? JSON.parse(item) : StatsSocial.Stats;
+    } catch (e) {
+      console.error(e);
+      return StatsSocial.Stats;
+    }
+  });
+
+  const handleChange = (reorderedItems: Array<GridsStats>) => {
+    setStats(reorderedItems);
+  };
+
+  const itemRenderer = (item: GridsStats, index: number): JSX.Element => {
+    return (
+      <li className='item'>
+        <CardStatsBottom
+          Title={item.Title}
+          SocialMedia={item.SocialMedia}
+          Stats={item.Stats}
+          NewStats={item.NewStats}
+          UpStats={item.UpStats}
+        />
+      </li>
+    );
+  };
   return (
     <>
       <ContainerGridStats>
         <h2 className='Overview'>Overview - Today</h2>
-        
-          <div className='container'>
-            <div className='cards'>
-              <CardStatsBottom
-                Title='Page Views'
-                SocialMedia='Facebook'
-                Stats={87}
-                NewStats={3}
-                UpStats={true}
-              />
-              <CardStatsBottom
-                Title='Likes'
-                SocialMedia='Facebook'
-                Stats={52}
-                NewStats={2}
-                UpStats={false}
-              />
-              <CardStatsBottom
-                Title='Likes'
-                SocialMedia='Instagram'
-                Stats={5462}
-                NewStats={2257}
-                UpStats={true}
-              />
-              <CardStatsBottom
-                Title='Profile Views'
-                SocialMedia='Instagram'
-                Stats={52000}
-                NewStats={1375}
-                UpStats={true}
-              />
-              <CardStatsBottom
-                Title='Retweets'
-                SocialMedia='Twitter'
-                Stats={117}
-                NewStats={303}
-                UpStats={true}
-              />
-              <CardStatsBottom
-                Title='Likes'
-                SocialMedia='Twitter'
-                Stats={507}
-                NewStats={553}
-                UpStats={true}
-              />
-              <CardStatsBottom
-                Title='Likes'
-                SocialMedia='YouTube'
-                Stats={107}
-                NewStats={19}
-                UpStats={false}
-              />
-              <CardStatsBottom
-                Title='Total Views'
-                SocialMedia='YouTube'
-                Stats={1407}
-                NewStats={12}
-                UpStats={false}
-              />
-            </div>
-          </div>
-        
+        <RLDD
+          inlineStyle={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(275px, 1.5fr))",
+          }}
+          cssClasses='cards'
+          items={stats}
+          itemRenderer={itemRenderer}
+          onChange={handleChange}
+        />
       </ContainerGridStats>
     </>
   );

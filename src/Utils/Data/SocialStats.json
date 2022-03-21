@@ -1,6 +1,7 @@
 {
   "Stats": [
     {
+      "id": 1,
       "Title": "Page Views",
       "SocialMedia": "Facebook",
       "Stats": 87,
@@ -8,6 +9,7 @@
       "UpStats": true
     },
     {
+      "id": 2,
       "Title": "Likes",
       "SocialMedia": "Facebook",
       "Stats": 52,
@@ -15,6 +17,7 @@
       "UpStats": false
     },
     {
+      "id": 3,
       "Title": "Likes",
       "SocialMedia": "Instagram",
       "Stats": 5462,
@@ -22,6 +25,7 @@
       "UpStats": true
     },
     {
+      "id": 4,
       "Title": "Profile Views",
       "SocialMedia": "Instagram",
       "Stats": 52000,
@@ -29,6 +33,7 @@
       "UpStats": true
     },
     {
+      "id": 5,
       "Title": "Retweets",
       "SocialMedia": "Twitter",
       "Stats": 117,
@@ -36,6 +41,7 @@
       "UpStats": true
     },
     {
+      "id": 6,
       "Title": "Likes",
       "SocialMedia": "Twitter",
       "Stats": 507,
@@ -43,6 +49,7 @@
       "UpStats": true
     },
     {
+      "id": 7,
       "Title": "Likes",
       "SocialMedia": "YouTube",
       "Stats": 107,
@@ -50,6 +57,7 @@
       "UpStats": false
     },
     {
+      "id": 8,
       "Title": "Total Views",
       "SocialMedia": "YouTube",
       "Stats": 1407,
